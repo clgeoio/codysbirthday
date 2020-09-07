@@ -3,8 +3,11 @@ import Head from "next/head";
 import { Flex, Heading, Box, Text, Divider } from "@chakra-ui/core";
 import { Form } from "../components/form";
 
-function getTimeRemaining(endtime) {
-  const total = new Date(endtime) - new Date();
+function getTimeRemaining() {
+  const total =
+    new Date(
+      "Sat Oct 03 2020 00:00:00 GMT+1000 (Australian Eastern Standard Time)"
+    ).getTime() - Date.now();
   const days = Math.floor(total / (1000 * 60 * 60 * 24));
 
   return {
@@ -22,7 +25,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ apiUrl }) {
-  const remaining = getTimeRemaining("2020-10-3");
+  const remaining = getTimeRemaining();
   const [submitted, setSubmitted] = useState(false);
   useEffect(() => {
     setSubmitted(
