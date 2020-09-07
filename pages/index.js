@@ -31,25 +31,36 @@ export default function Home({ apiUrl }) {
   }, []);
 
   return (
-    <div>
+    <Box
+      backgroundImage="url('/bg.png')"
+      height="100vh"
+      backgroundSize="cover"
+      backgroundRepeat="no-repeat"
+    >
       <Head>
         <title>Cody's Birthday</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Flex
-          align="center"
-          justify="center"
-          marginTop="30px"
-          flexDirection="column"
-        >
-          <Heading fontSize="4rem">Cody's Birthday</Heading>
-
-          <Box maxW="xl" borderWidth="1px" rounded="lg" marginTop="2rem">
+        <Flex align="center" justify="center" flexDirection="column">
+          <Box
+            maxW="xl"
+            borderWidth="1px"
+            rounded="lg"
+            marginTop="2rem"
+            backgroundColor="white"
+          >
             <Box p="6">
-              <Box p="2" textAlign="center">
+              <Box>
+                <Heading textAlign="center" size="2xl">
+                  Cody's Birthday
+                </Heading>
+              </Box>
+
+              <Box marginTop="2rem" p="2" textAlign="center">
+                <Text>My birthday is fast approaching!</Text>
                 <Text>
-                  My birthday is fast approaching: only{" "}
+                  only{" "}
                   <Text as="span" fontWeight="bold" color="red.400">
                     {remaining.days}
                   </Text>{" "}
@@ -75,13 +86,13 @@ export default function Home({ apiUrl }) {
                     </Text>
                   </Fragment>
                 ) : (
-                  <Form apiUrl={apiUrl} />
+                  <Form apiUrl={apiUrl} setSubmitted={setSubmitted} />
                 )}
               </Box>
             </Box>
           </Box>
         </Flex>
       </main>
-    </div>
+    </Box>
   );
 }

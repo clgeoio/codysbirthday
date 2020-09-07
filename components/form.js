@@ -14,22 +14,25 @@ import {
   useToast,
 } from "@chakra-ui/core";
 
-const Form = ({ apiUrl }) => {
+axios.interceptors.request.use((config) => {
+  delete config.headers["Content-Type"];
+  delete config.headers["post"]["Content-Type"];
+  console.log(config.headers);
+  return config;
+});
+
+const Form = ({ apiUrl, setSubmitted }) => {
   const toast = useToast();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
     axios
-      .post(
-        apiUrl,
-        {
-          fname,
-          lname,
-          phone,
-        },
-        { headers: { "Content-Type": null } }
-      )
+      .post(apiUrl, {
+        fname,
+        lname,
+        phone,
+      })
       .then(() => {
         window.localStorage.setItem("codysbirthday", "true");
         setSubmitted(true);
