@@ -4,7 +4,7 @@ import { Flex, Heading, Box, Text, Divider } from "@chakra-ui/core";
 import { Form } from "../components/form";
 
 function getTimeRemaining(endtime) {
-  const total = Date.parse(endtime) - Date.now();
+  const total = new Date(endtime) - new Date(Date.now());
   const days = Math.floor(total / (1000 * 60 * 60 * 24));
 
   return {
