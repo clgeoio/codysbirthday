@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react";
 import Head from "next/head";
 import { Flex, Heading, Box, Text, Divider } from "@chakra-ui/core";
-import { Form } from "./form";
+import { Form } from "../components/form";
 
 function getTimeRemaining(endtime) {
   const total = Date.parse(endtime) - Date.parse(new Date());
