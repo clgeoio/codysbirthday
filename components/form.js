@@ -28,7 +28,7 @@ const Form = () => {
           lname,
           phone,
         },
-        { headers: { Accept: "application/json" } }
+        { headers: { "Content-Type": null } }
       )
       .then(() => {
         window.localStorage.setItem("codysbirthday", "true");
