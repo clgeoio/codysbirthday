@@ -46,11 +46,14 @@ export default function Home({ apiUrl }) {
         <meta property="og:title" content="Cody's Birthday" />
         <meta property="og:site_name" content="Cody's Birthday" />
         <meta property="og:url" content="https://www.codysbirthday.com/" />
-        <meta property="og:description" content="" />
+        <meta
+          property="og:description"
+          content="It's my birthday soon and I'd like you to be a part of it."
+        />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="https://www.codysbirthday.com/dog.jpg"
+          content="https://www.codysbirthday.com/og.jpg"
         />
       </Head>
       <main>
