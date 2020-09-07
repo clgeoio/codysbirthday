@@ -78,7 +78,7 @@ const Form = ({ apiUrl, setSubmitted }) => {
             />
             <Input
               id="phone"
-              type="phone"
+              type="tel"
               placeholder="Phone number"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
