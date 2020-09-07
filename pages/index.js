@@ -36,9 +36,9 @@ export default function Home({ apiUrl }) {
   return (
     <Box
       backgroundImage="url('dog.jpg')"
-      height="1100px"
+      height="1000px"
       backgroundSize="cover"
-      backgroundPosition="50% 100%"
+      backgroundPosition="50% 70%"
     >
       <Head>
         <title>Cody's Birthday</title>
@@ -52,7 +52,7 @@ export default function Home({ apiUrl }) {
             </Heading>
           </Box>
 
-          <Box maxW="xl" marginTop="2rem">
+          <Box maxW="xl" marginTop="0.2rem">
             <Box p="6">
               <Box p="2" textAlign="center">
                 <Text>My birthday is fast approaching!</Text>
