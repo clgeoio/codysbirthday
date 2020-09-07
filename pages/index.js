@@ -1,65 +1,79 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import React, { useState, useEffect, Fragment } from "react";
+import Head from "next/head";
+import { Flex, Heading, Box, Text, Divider } from "@chakra-ui/core";
+import { Form } from "./form";
+
+function getTimeRemaining(endtime) {
+  const total = Date.parse(endtime) - Date.parse(new Date());
+  const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+  return {
+    total,
+    days,
+  };
+}
 
 export default function Home() {
+  const remaining = getTimeRemaining(new Date(2020, 10, 3));
+  const [submitted, setSubmitted] = useState(false);
+  useEffect(() => {
+    setSubmitted(
+      Boolean(window && window.localStorage.getItem("codysbirthday"))
+    );
+  }, []);
+
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Cody's Birthday</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      <main>
+        <Flex
+          align="center"
+          justify="center"
+          marginTop="30px"
+          flexDirection="column"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+          <Heading fontSize="4rem">Cody's Birthday</Heading>
+
+          <Box maxW="xl" borderWidth="1px" rounded="lg" marginTop="2rem">
+            <Box p="6">
+              <Box p="2" textAlign="center">
+                <Text>
+                  My birthday is fast approaching: only{" "}
+                  <Text as="span" fontWeight="bold" color="red.400">
+                    {remaining.days}
+                  </Text>{" "}
+                  days away
+                </Text>
+              </Box>
+              <Box marginTop="2rem" marginBottom="2rem">
+                <Text>
+                  It would be truly wonderful to have you attend a gathering
+                  with friends, old and new. I have created this small form for
+                  you to put your contact details in and you will be notified
+                  via SMS of the event.
+                </Text>
+              </Box>
+              <Divider borderColor="red.400" />
+
+              <Box marginTop="2rem">
+                {submitted ? (
+                  <Fragment>
+                    <Text textAlign="center">🎉 You're all set 🎉</Text>
+                    <Text textAlign="center">
+                      You will recieve an SMS closer to the date
+                    </Text>
+                  </Fragment>
+                ) : (
+                  <Form />
+                )}
+              </Box>
+            </Box>
+          </Box>
+        </Flex>
+      </main>
     </div>
-  )
+  );
 }
