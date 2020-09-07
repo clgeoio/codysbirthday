@@ -36,7 +36,7 @@ export default function Home({ apiUrl }) {
   return (
     <Box
       backgroundImage="url('dog.jpg')"
-      height="1000px"
+      height={["1000px", "1000px", "1000px", "1600px"]}
       backgroundSize="cover"
       backgroundPosition="50% 70%"
     >
