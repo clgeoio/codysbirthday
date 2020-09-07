@@ -34,7 +34,12 @@ export default function Home({ apiUrl }) {
   }, []);
 
   return (
-    <Box height="100vh">
+    <Box
+      backgroundImage="url('dog.jpg')"
+      height="1100px"
+      backgroundSize="cover"
+      backgroundPosition="50% 100%"
+    >
       <Head>
         <title>Cody's Birthday</title>
         <link rel="icon" href="/favicon.ico" />
@@ -43,17 +48,11 @@ export default function Home({ apiUrl }) {
         <Flex align="center" justify="center" flexDirection="column">
           <Box marginTop="2rem">
             <Heading textAlign="center" size="2xl">
-              Cody's Birthday
+              Cody's Birthday!
             </Heading>
           </Box>
 
-          <Box
-            maxW="xl"
-            borderWidth="1px"
-            rounded="lg"
-            marginTop="2rem"
-            backgroundColor="white"
-          >
+          <Box maxW="xl" marginTop="2rem">
             <Box p="6">
               <Box p="2" textAlign="center">
                 <Text>My birthday is fast approaching!</Text>
