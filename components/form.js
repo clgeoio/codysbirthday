@@ -14,7 +14,7 @@ import {
   useToast,
 } from "@chakra-ui/core";
 
-const Form = () => {
+const Form = ({ apiUrl }) => {
   const toast = useToast();
 
   const handleSubmit = (event) => {
@@ -22,7 +22,7 @@ const Form = () => {
     setLoading(true);
     axios
       .post(
-        process.env.API_URL,
+        apiUrl,
         {
           fname,
           lname,

@@ -13,7 +13,15 @@ function getTimeRemaining(endtime) {
   };
 }
 
-export default function Home() {
+export async function getStaticProps() {
+  return {
+    props: {
+      apiUrl: process.env.API_URL,
+    },
+  };
+}
+
+export default function Home({ apiUrl }) {
   const remaining = getTimeRemaining(new Date(2020, 10, 3));
   const [submitted, setSubmitted] = useState(false);
   useEffect(() => {
@@ -67,7 +75,7 @@ export default function Home() {
                     </Text>
                   </Fragment>
                 ) : (
-                  <Form />
+                  <Form apiUrl={apiUrl} />
                 )}
               </Box>
             </Box>
