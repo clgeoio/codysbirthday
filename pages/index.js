@@ -43,6 +43,15 @@ export default function Home({ apiUrl }) {
       <Head>
         <title>Cody's Birthday</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Cody's Birthday" />
+        <meta property="og:site_name" content="Cody's Birthday" />
+        <meta property="og:url" content="https://www.codysbirthday.com/" />
+        <meta property="og:description" content="" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://www.codysbirthday.com/dog.jpg"
+        />
       </Head>
       <main>
         <Flex align="center" justify="center" flexDirection="column">
