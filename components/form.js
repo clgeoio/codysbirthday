@@ -14,13 +14,6 @@ import {
   useToast,
 } from "@chakra-ui/core";
 
-axios.interceptors.request.use((config) => {
-  delete config.headers["Content-Type"];
-  delete config.headers["post"]["Content-Type"];
-  console.log(config.headers);
-  return config;
-});
-
 const Form = ({ apiUrl, setSubmitted }) => {
   const toast = useToast();
 
@@ -28,6 +21,9 @@ const Form = ({ apiUrl, setSubmitted }) => {
     event.preventDefault();
     setLoading(true);
     axios
+      .create({
+        transformRequest: [(data, _headers) => JSON.stringify(data)],
+      })
       .post(apiUrl, {
         fname,
         lname,

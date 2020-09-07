@@ -4,7 +4,7 @@ import { Flex, Heading, Box, Text, Divider } from "@chakra-ui/core";
 import { Form } from "../components/form";
 
 function getTimeRemaining(endtime) {
-  const total = Date.parse(endtime) - Date.parse(new Date());
+  const total = Date.parse(endtime) - Date.now();
   const days = Math.floor(total / (1000 * 60 * 60 * 24));
 
   return {
@@ -22,7 +22,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ apiUrl }) {
-  const remaining = getTimeRemaining(new Date(2020, 10, 3));
+  const remaining = getTimeRemaining("2020-10-3");
   const [submitted, setSubmitted] = useState(false);
   useEffect(() => {
     setSubmitted(
@@ -31,18 +31,19 @@ export default function Home({ apiUrl }) {
   }, []);
 
   return (
-    <Box
-      backgroundImage="url('/bg.png')"
-      height="100vh"
-      backgroundSize="cover"
-      backgroundRepeat="no-repeat"
-    >
+    <Box height="100vh">
       <Head>
         <title>Cody's Birthday</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
         <Flex align="center" justify="center" flexDirection="column">
+          <Box marginTop="2rem">
+            <Heading textAlign="center" size="2xl">
+              Cody's Birthday
+            </Heading>
+          </Box>
+
           <Box
             maxW="xl"
             borderWidth="1px"
@@ -51,13 +52,7 @@ export default function Home({ apiUrl }) {
             backgroundColor="white"
           >
             <Box p="6">
-              <Box>
-                <Heading textAlign="center" size="2xl">
-                  Cody's Birthday
-                </Heading>
-              </Box>
-
-              <Box marginTop="2rem" p="2" textAlign="center">
+              <Box p="2" textAlign="center">
                 <Text>My birthday is fast approaching!</Text>
                 <Text>
                   only{" "}
@@ -70,9 +65,9 @@ export default function Home({ apiUrl }) {
               <Box marginTop="2rem" marginBottom="2rem">
                 <Text>
                   It would be truly wonderful to have you attend a gathering
-                  with friends, old and new. I have created this small form for
-                  you to put your contact details in and you will be notified
-                  via SMS of the event.
+                  with friends, old and new. <br />I have created this small
+                  form for you to put your contact details and you will be
+                  notified via SMS closer to the date.
                 </Text>
               </Box>
               <Divider borderColor="red.400" />
