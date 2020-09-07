@@ -21,11 +21,15 @@ const Form = () => {
     event.preventDefault();
     setLoading(true);
     axios
-      .post("https://hooks.zapier.com/hooks/catch/1290660/oaalc4h", {
-        fname,
-        lname,
-        phone,
-      })
+      .post(
+        process.env.API_URL,
+        {
+          fname,
+          lname,
+          phone,
+        },
+        { headers: { Accept: "application/json" } }
+      )
       .then(() => {
         window.localStorage.setItem("codysbirthday", "true");
         setSubmitted(true);
