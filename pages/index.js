@@ -76,7 +76,7 @@ export default function Home({ apiUrl }) {
               <Box marginTop="2rem" marginBottom="2rem">
                 <Text>
                   It would be truly wonderful to have you attend a gathering
-                  with friends.
+                  with friends to celebrate my birthday.
                 </Text>
                 <Text>
                   If you're interested in coming, put your info in the form
