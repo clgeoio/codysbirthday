@@ -66,7 +66,7 @@ export default function Home({ apiUrl }) {
               <Box p="2" textAlign="center">
                 <Text>My birthday is fast approaching!</Text>
                 <Text>
-                  only{" "}
+                  Only{" "}
                   <Text as="span" fontWeight="bold" color="red.400">
                     {remaining.days}
                   </Text>{" "}
