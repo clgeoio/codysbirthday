@@ -76,9 +76,12 @@ export default function Home({ apiUrl }) {
               <Box marginTop="2rem" marginBottom="2rem">
                 <Text>
                   It would be truly wonderful to have you attend a gathering
-                  with friends, old and new. <br />I have created this small
-                  form for you to put your contact details and you will be
-                  notified via SMS closer to the date.
+                  with friends.
+                </Text>
+                <Text>
+                  If you're interested in coming, put your info in the form
+                  below and you will be notified via SMS with all the details
+                  (once I figure them out) closer to the date.
                 </Text>
                 <Text marginTop="1rem">
                   For now save:{" "}
