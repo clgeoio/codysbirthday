@@ -80,6 +80,17 @@ export default function Home({ apiUrl }) {
                   form for you to put your contact details and you will be
                   notified via SMS closer to the date.
                 </Text>
+                <Text marginTop="1rem">
+                  For now save:{" "}
+                  <Text as="span" fontWeight="bold">
+                    Saturday, 3rd October
+                  </Text>{" "}
+                  at around{" "}
+                  <Text as="span" fontWeight="bold">
+                    lunch time
+                  </Text>{" "}
+                  in your mind
+                </Text>
               </Box>
               <Divider borderColor="red.400" />
 
