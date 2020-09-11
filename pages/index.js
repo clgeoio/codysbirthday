@@ -6,7 +6,7 @@ import { Form } from "../components/form";
 function getTimeRemaining() {
   const total =
     new Date(
-      "Sat Oct 03 2020 00:00:00 GMT+1000 (Australian Eastern Standard Time)"
+      `Oct 03 ${new Date().getFullYear()} 00:00:00 GMT+1000 (Australian Eastern Standard Time)`
     ).getTime() - Date.now();
   const days = Math.floor(total / (1000 * 60 * 60 * 24));
 
@@ -68,7 +68,7 @@ export default function Home({ apiUrl }) {
                 <Text>
                   Only{" "}
                   <Text as="span" fontWeight="bold" color="red.400">
-                    {remaining.days}
+                    {remaining.days + 1}
                   </Text>{" "}
                   days away
                 </Text>
