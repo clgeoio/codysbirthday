@@ -85,11 +85,11 @@ export default function Home({ apiUrl }) {
                 </Text>
                 <Text marginTop="1rem">
                   For now save:{" "}
-                  <Text as="span" fontWeight="bold">
+                  <Text as="span" fontWeight="bold" color="red.400">
                     Saturday, 3rd October
                   </Text>{" "}
                   at around{" "}
-                  <Text as="span" fontWeight="bold">
+                  <Text as="span" fontWeight="bold" color="red.400">
                     lunch time
                   </Text>{" "}
                   in your mind
