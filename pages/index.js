@@ -84,40 +84,11 @@ export default function Home({ apiUrl }) {
               </Box>
               <Box marginTop="2rem" marginBottom="2rem">
                 <Text>
-                  It would be truly wonderful to have you attend a gathering
-                  with friends to celebrate my birthday.
-                </Text>
-                <Text>
-                  If you're interested in coming, put your info in the form
-                  below and you will be notified via SMS with all the details
-                  (once I figure them out) closer to the date.
-                </Text>
-                <Text marginTop="1rem">
-                  For now save:{" "}
-                  <Text as="span" fontWeight="bold" color="red.400">
-                    {weekDay}, 3rd October
-                  </Text>{" "}
-                  at around{" "}
-                  <Text as="span" fontWeight="bold" color="red.400">
-                    lunch time
-                  </Text>{" "}
-                  in your mind
+                  Information has been sent out. Check your messages, see you
+                  soon!
                 </Text>
               </Box>
               <Divider borderColor="red.400" />
-
-              {/* <Box marginTop="2rem">
-                {submitted ? (
-                  <Fragment>
-                    <Text textAlign="center">🎉 You're all set 🎉</Text>
-                    <Text textAlign="center">
-                      You will recieve an SMS closer to the date
-                    </Text>
-                  </Fragment>
-                ) : (
-                  <Form apiUrl={apiUrl} setSubmitted={setSubmitted} />
-                )}
-              </Box> */}
             </Box>
           </Box>
         </Flex>
