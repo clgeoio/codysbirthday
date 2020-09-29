@@ -3,11 +3,8 @@ import Head from "next/head";
 import { Flex, Heading, Box, Text, Divider } from "@chakra-ui/core";
 import { Form } from "../components/form";
 
-function getTimeRemaining() {
-  const total =
-    new Date(
-      `Oct 03 ${new Date().getFullYear()} 00:00:00 GMT+1000 (Australian Eastern Standard Time)`
-    ).getTime() - Date.now();
+function getTimeRemaining(theDay) {
+  const total = theDay.getTime() - Date.now();
   const days = Math.floor(total / (1000 * 60 * 60 * 24));
 
   return {
@@ -25,7 +22,19 @@ export async function getStaticProps() {
 }
 
 export default function Home({ apiUrl }) {
-  const remaining = getTimeRemaining();
+  const theDay = new Date(
+    `Oct 03 ${new Date().getFullYear()} 00:00:00 GMT+1000 (Australian Eastern Standard Time)`
+  );
+  const weekDay = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ][theDay.getDay()];
+  const remaining = getTimeRemaining(theDay);
   const [submitted, setSubmitted] = useState(false);
   useEffect(() => {
     setSubmitted(
@@ -86,7 +95,7 @@ export default function Home({ apiUrl }) {
                 <Text marginTop="1rem">
                   For now save:{" "}
                   <Text as="span" fontWeight="bold" color="red.400">
-                    Saturday, 3rd October
+                    {weekDay}, 3rd October
                   </Text>{" "}
                   at around{" "}
                   <Text as="span" fontWeight="bold" color="red.400">
@@ -97,7 +106,7 @@ export default function Home({ apiUrl }) {
               </Box>
               <Divider borderColor="red.400" />
 
-              <Box marginTop="2rem">
+              {/* <Box marginTop="2rem">
                 {submitted ? (
                   <Fragment>
                     <Text textAlign="center">🎉 You're all set 🎉</Text>
@@ -108,7 +117,7 @@ export default function Home({ apiUrl }) {
                 ) : (
                   <Form apiUrl={apiUrl} setSubmitted={setSubmitted} />
                 )}
-              </Box>
+              </Box> */}
             </Box>
           </Box>
         </Flex>
