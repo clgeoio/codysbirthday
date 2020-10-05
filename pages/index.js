@@ -72,21 +72,8 @@ export default function Home({ apiUrl }) {
 
           <Box maxW="xl" marginTop="0.2rem">
             <Box p="6">
-              <Box p="2" textAlign="center">
-                <Text>My birthday is fast approaching!</Text>
-                <Text>
-                  Only{" "}
-                  <Text as="span" fontWeight="bold" color="red.400">
-                    {remaining.days + 1}
-                  </Text>{" "}
-                  days away
-                </Text>
-              </Box>
               <Box marginTop="2rem" marginBottom="2rem">
-                <Text>
-                  Information has been sent out. Check your messages, see you
-                  soon!
-                </Text>
+                <Text>Thanks for coming!</Text>
               </Box>
               <Divider borderColor="red.400" />
             </Box>
